@@ -15,3 +15,8 @@ elementAt (x:xs) n
 myLength ([]) = 0
 myLength ([x]) = 1
 myLength (x:xs) = 1 + myLength(xs)
+
+----- Problem 05 -----
+myReverse ([]) = []
+myReverse ([x]) = [x]
+myReverse (x:xs) = myReverse(xs) ++ [x]
