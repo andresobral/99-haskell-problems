@@ -10,3 +10,8 @@ myButLast (x:xs) = myButLast(xs)
 elementAt (x:xs) n
   | n == 1 = x
   | n > 1 = elementAt (xs) (n - 1)
+
+----- Problem 04 -----
+myLength ([]) = 0
+myLength ([x]) = 1
+myLength (x:xs) = 1 + myLength(xs)
