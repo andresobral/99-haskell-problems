@@ -20,3 +20,6 @@ myLength (x:xs) = 1 + myLength(xs)
 myReverse ([]) = []
 myReverse ([x]) = [x]
 myReverse (x:xs) = myReverse(xs) ++ [x]
+
+----- Problem 06 -----
+isPalindrome list = list == myReverse(list)
