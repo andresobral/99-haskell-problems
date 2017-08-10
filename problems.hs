@@ -1,6 +1,6 @@
 ----- Problem 01: Find the last element of a list -----
 myLast ([x]) = x
-myLast (x:xs) = myLast(xs)
+myLast (:xs) = myLast(xs)
 
 ----- Problem 02: Find the last but one element of a list -----
 myButLast ([x,xs]) = x
@@ -24,3 +24,9 @@ myReverse (x:xs) = myReverse(xs) ++ [x]
 
 ----- Problem 06: Find out whether a list is a palindrome -----
 isPalindrome list = list == myReverse(list)
+
+----- Problem 07: Flatten a nested list structure -----
+data NestedList a = Elem a | List [NestedList a] deriving (Show)
+flatten (List []) = []
+flatten (Elem x) = [x]
+flatten (List (x:xs)) = flatten(x) ++ flatten(List xs)
