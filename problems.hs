@@ -1,6 +1,6 @@
 ----- Problem 01: Find the last element of a list -----
 myLast ([x]) = x
-myLast (:xs) = myLast(xs)
+myLast (x:xs) = myLast(xs)
 
 ----- Problem 02: Find the last but one element of a list -----
 myButLast ([x,xs]) = x
@@ -30,3 +30,7 @@ data NestedList a = Elem a | List [NestedList a] deriving (Show)
 flatten (List []) = []
 flatten (Elem x) = [x]
 flatten (List (x:xs)) = flatten(x) ++ flatten(List xs)
+
+----- Problem 08: Eliminate consecutive duplicates of list elements. -----
+compress ([]) = []
+compress (x:xs) = [x] ++ compress([a | a <- xs, a /= x ])
